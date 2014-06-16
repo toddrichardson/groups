@@ -1,0 +1,101 @@
+<script src="/vendor/chui/chocolatechip-3.0.6.js"></script>
+<script src="/vendor/chui/chui-3.0.6.js"></script>
+<script type="text/javascript">
+$(function() {
+  var segmentedOptions = {
+    id: 'mySegmented',
+    labels : ['Chat','Media'],
+    selected: 0
+  };
+
+  var segmentedResponse = function(e) {
+    e.stopPropagation();
+    $('#output').find('h3 > span').html(($(this).index() + 1));
+  };
+
+  var newSegmented = $.UICreateSegmented(segmentedOptions);
+    $('#segmentedPanel').append(newSegmented);
+    $('.segmented').UISegmented({callback:segmentedResponse});
+    $('.segmented').UIPanelToggle('#toggle-panels',function(){$.noop;});
+
+  var selectedPanel = $('.segmented').find('.selected').index();
+    $('#output').find('span').html(selectedPanel + 1);
+  });
+
+
+function appendInput() {
+  $('.messages').append('<p class="chat-text"><em>12:08PM</em>' + $('.user-message').val() + '</p>');
+//   $('.chat-input').value = '';
+  document.getElementById('messageInput').value = '';
+  $(".user-message").focus();
+}
+
+</script>
+
+<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+
+<article>
+  <section class="chat-firebase">
+    <div id='segmentedPanel' class='horizontal centered'></div>
+    <div id="toggle-panels">
+      <div class="touch">
+      <img src="/icons/load-earlier.png" style="height:30px;padding:10px;" class="load-earlier">
+        <div class="messages">
+          
+          <p class="chat-text">Morning team<em>11:00AM</em></p>
+          <p class="chat-text white-right ko-time">Good morning John!<em>11:10AM</em></p>
+          <p class="chat-text">Are you ready for the match?<em>11:12AM</em></p>
+          <p class="chat-text white-right ko-time">Always!<em>11:15AM</em></p>
+          <p class="chat-text">Hey what time is kick-off?<em>11:20AM</em></p>
+          <p class="chat-text white-right ko-time">13:00<em>11:30AM</em></p>
+        </div>
+
+        <!-- <input type='text' class="chat-input user-name" id='nameInput' placeholder='Name'> -->
+        <div class="input-message-container"> 
+        <img src="/icons/paperclip@2x.png" style="height:20px;padding:15px;" class="paperclip">
+        <input type='text' class="chat-input user-message" id='messageInput' placeholder='Message'>
+        <button type="button" style="height:20px;padding:15px;" id="push" class="send-button" onclick="appendInput()";>Send</button>
+
+        <!-- <img src="/icons/microphone@2x.png" style="height:20px;padding:15px;" class="microphone" onclick="appendInput()"> -->
+        </div>
+        <script>
+        /*var myDataRef = new Firebase('https://final-year.firebaseio.com/');
+
+        $('#messageInput').keypress(function (e) {
+          if (e.keyCode == 13) {
+            var name = $('#nameInput').val();
+            var text = $('#messageInput').val();
+            myDataRef.push({name: name, text: text});
+            $('#messageInput').val('');
+          }
+        });
+        myDataRef.on('child_added', function(snapshot) {
+          var message = snapshot.val();
+          displayChatMessage(message.name, message.text);
+        });
+        function displayChatMessage(name, text) {
+          $('<div class="chat-text"/>').text(text).prepend($('<p class="chat-name"/>').text(name+': ')).appendTo($('.messages'));
+          $('.messages')[0].scrollTop = $('.messages')[0].scrollHeight;
+        };*/
+        </script>
+
+      </div>
+    
+    <div>
+    <img src="/images/chat-media.png"  style="width: 100%;" class="">
+      
+    </div>
+    </div>
+  </section>
+</article>
+
+<div class="friend action-sheet">
+  <div class="action-sheet-content">
+    <a class="action-sheet-button take_photo_btn">Take Video or Photo</a>
+    <a class="action-sheet-button choose_photo_btn">Choose Existing Photo</a>
+    <a class="action-sheet-button choose_photo_btn">Choose Existing Video</a>
+    <a class="action-sheet-button take_photo_btn">Share Location</a>
+    <a class="action-sheet-button choose_photo_btn">Share Contact</a>
+    <a class="action-sheet-button cancel_btn">Cancel</a>
+  </div>
+</div>

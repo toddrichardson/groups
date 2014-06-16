@@ -1,0 +1,213 @@
+<script src="/vendor/chui/chocolatechip-3.0.6.js"></script>
+<script src="/vendor/chui/chui-3.0.6.js"></script>
+<script>
+// http://stackoverflow.com/questions/19250043/how-to-add-input-value-to-a-content-wrapped-between-div-tags-jquery
+/*function appendInput() {
+    $('.feed-update').append('<div> <ul class="list"> <li class="comp"> <aside> <span class="profile-john-img"></span> </aside> <div> <h3>John Smith</h3> <h4>February 10th</h4> <p>' + $('.input-value').val() + '</div> </p> </li> </ul> </div>');
+}
+*/
+/* Segmented list - inline - bad practice*/
+$(function() {
+var segmentedOptions = {
+  id: 'mySegmented',
+  labels : ['Timeline','Groups','Contacts'],
+  selected: 0
+};
+
+var segmentedResponse = function(e) {
+  e.stopPropagation();
+  $('#output').find('h3 > span').html(($(this).index() + 1));
+};
+
+var newSegmented = $.UICreateSegmented(segmentedOptions);
+  $('#segmentedPanel').append(newSegmented);
+  $('.segmented').UISegmented({callback:segmentedResponse});
+  $('.segmented').UIPanelToggle('#toggle-panels',function(){$.noop;});
+
+var selectedPanel = $('.segmented').find('.selected').index();
+  $('#output').find('span').html(selectedPanel + 1);
+});
+
+</script>
+
+<article>
+  <div class="profile-container">
+
+    <div class="profile-top">
+      <!-- <img style="display:none;width:200px;height:200px;" id="largeImage" src="" /> -->
+      <!-- <button class="add-photo" onclick="capturePhotoEdit();">+</button> -->
+<img title='' src="/images/user-profile-contacts.png" style="height:213px;">
+    </div>
+
+    
+   
+    <div class="">
+
+      
+        <section>
+      <div id='segmentedPanel' class='horizontal centered test-segmented'></div>
+        <div id="toggle-panels">
+          <div class="update-list">
+            <ul class='list'>
+              <li class='comp'>
+                <aside>
+                  <span class="profile-image-james"></span>
+                </aside>
+                <div>
+                  <h3>John Smith</h3>
+                  <h4>February 10th</h4>
+                  <p>This app idea is pretty neat.</p>
+                </div>
+
+              </li>
+            </ul>
+            <ul class='list'>
+              <li class='comp'>
+                <aside>
+                  <span class="profile-image-james" id="smallImage"></span>
+                </aside>
+                <div>
+                  <h3>John Smith</h3>
+                  <h4>February 6th</h4>
+                  <p>Eating porridge, overlooking London - Good morning!</p>
+                </div>
+              </li>
+            </ul> 
+            <ul class='list'>
+              <li class='comp'>
+                <aside>
+                  <span class="profile-image-james"></span>
+                </aside>
+                <div>
+                  <h3>John Smith</h3>
+                  <h4>January 28th</h4>
+                  <p>Here is my first post!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+      <div class="groups-tab">
+        <ul class='list'>
+          <li class='comp group-button'>
+             <aside>
+                <span class="default-icon"><img title='' src="/images/group-2.png" style="height: 52px;"></span>
+             </aside>
+             <div>
+                <h3>Sunday Football</h3>
+                <h4>Organising weekly kickabouts</h4>
+             </div>
+             <aside>
+                <span class='nav'></span>
+             </aside>
+          </li>
+          <li class='comp'>
+             <aside>
+                <span class="default-icon"><img title='' src="/images/group-3.png" style="height: 52px;"></span>
+             </aside>
+             <div>
+                <h3>Glastonbury Festival</h3>
+                <h4>Upcoming festival plans</h4>
+             </div>
+             <aside>
+                <span class='nav'></span>
+             </aside>
+          </li>
+          <li class='comp'>
+             <aside>
+                <span class="default-icon"><img title='' src="/images/group-4.png" style="height: 52px;"></span>
+             </aside>
+             <div>
+                <h3>Brighton Dome gig</h3>
+                <h4>Gigs plan in Brighton</h4>
+             </div>
+             <aside>
+                <span class='nav'></span>
+             </aside>
+          </li>
+          <li class='comp'>
+             <aside>
+                <span class="default-icon"><img title='' src="/images/group4b.png" style="height: 52px;"></span>
+             </aside>
+             <div>
+                <h3>Jake's Birthday</h3>
+                <h4>Jake's 22nd birthday night plan</h4>
+             </div>
+             <aside>
+                <span class='show-detail'></span>
+             </aside>
+          </li>
+        </ul>
+      </div>
+          <div class="contacts">
+            <div class="contact-z">
+               <h2 class="profile-contact-title">A</h2>
+              <ul class='list harry-contact contact-list'>
+                <li class='nav'>
+                <aside>
+                      <span class="default-icon"><img title='' src="/images/harry.png" style="height: 45px;"></span>
+                   </aside>
+                 <h3>Harry Adams</h3>
+                </li>
+              </ul>
+              <ul class='list max-contact contact-list'>
+                <li class='nav'>
+                <aside>
+                  <span class="default-icon"><img title='' src="/images/max@2x.png" style="height: 45px;"></span>
+                </aside>
+                <h3>Max Andrews</h3>
+                </li>
+              </ul>
+              <h2 class="profile-contact-title profile-r-title">R</h2>
+              <ul class='list contact-list list-2'>
+                <li class='nav conversation-button'>
+                  <aside>
+                      <span class="default-icon"><img title='' src="/images/hannah.png" style="height: 45px;"></span>
+                   </aside>
+                  <h3>Hannah Richards</h3>
+                </li>
+              </ul>
+              <h2 class="profile-contact-title profile-r-title">S</h2>
+              <ul class='list contact-list list-2'>
+                <li class='nav'>
+                  <aside>
+                      <span class="default-icon"><img title='' src="/images/john-square.jpg" style="height: 45px;"></span>
+                   </aside>
+                  <h3>John Smith</h3>
+                </li>
+              </ul>
+              <br>
+              <br>
+            </div>  
+        </div>
+       </div>
+
+        <!-- <ul class='list' id='output'>
+          <li>
+            <h3>You selected panel: <span></span>.</h3>
+          </li>
+        </ul> -->
+      </section>
+  </div>
+  </div>
+</article>
+<!-- <div class="friend action-sheet">
+  <div class="action-sheet-content">
+    <a class="action-sheet-button delete_friend_button">Delete</a>
+    <a class="action-sheet-button mute_button">Mute</a>
+    <a class="action-sheet-button block_button">Block</a>
+    <a class="action-sheet-button cancel_button">Cancel</a>
+  </div>
+</div> -->
+<!--
+    <div class="alert">
+      <div class="alert-content" style="margin-top: -85px;">
+        <h3>Mute friend_name</h3>
+          <p>You will stop getting notifications from friend_name. You can still see posts in your stream or on their profile.</p>
+        <div class="alert-buttons">
+          <a class="alert-button right primary">Mute</a>
+          <a class="alert-button left">Cancel</a>
+        </div>
+      </div>
+    </div>
+-->

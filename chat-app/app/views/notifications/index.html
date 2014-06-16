@@ -1,0 +1,117 @@
+ <script src="/vendor/chui/chocolatechip-3.0.6.js"></script>
+ <script src="/vendor/chui/chui-3.0.6.js"></script>
+ <script>
+    // chui switches
+    $(function() {
+         // Set response to last checked switch:
+         $('.switch').each(function(ctx, idx) {
+            if (window && window.jQuery) ctx = idx;
+            if (ctx.classList.contains('on')) {
+               $('#response').html($(ctx).find('input').val());
+            }
+         });
+
+         $('.switch').on('singletap swipeleft swiperight', function() {
+            if (this.classList.contains('on')) {
+               $('#response').html($(this).find('input').val());
+            } else {
+               $('#response').empty();
+            }
+         });
+      });
+ </script>
+ <script>
+ // chui selectable list
+   $(function() {
+      $('.tick').UISelectList({
+         selected: 2,
+         callback: function() {
+            $("#response").html($(this).text());
+         }
+      });
+      if (window.jQuery) {
+        $('.select').each(function(idx, ctx) {
+           if ($(ctx).hasClass('selected')) {
+              $("#response").html($(ctx).text());
+           }
+        });
+      } else {
+        $("#response").html($('li').hasClass('selected').text());
+      }
+  });
+ </script>
+<br>
+ <section>
+    <ul class='list'>
+        <li class='comp'>
+           <div>
+              <h3>Alerts</h3>
+           </div>
+           <aside>
+              <span class="switch on" id="beepSwitch">
+                  <input type="checkbox" value="" name="switchSetting">
+              </span>
+           </aside>
+        </li>
+        <li class='comp'>
+           <div>
+              <h3>In-App Vibrate</h3>
+           </div>
+           <aside>
+              <span class="switch on" id="beepSwitch">
+                  <input type="checkbox" value="" name="switchSetting">
+              </span>
+           </aside>
+        </li>
+        <li class='comp'>
+           <div>
+              <h3>In-App Sounds</h3>
+           </div>
+           <aside>
+              <span class="switch on" id="beepSwitch">
+                  <input type="checkbox" value="" name="switchSetting">
+              </span>
+           </aside>
+        </li>
+    </u>
+ </section>
+<br>
+<section>
+   <ul class='list' role='list'>
+      <li class='comp' ontouchend="openProfilePrivacy()">
+         <div>
+            <h3>Block List</h3>
+         </div>
+         <aside>
+            <span class='nav'></span>
+         </aside>
+      </li>
+   </ul>
+</section>
+<br>
+<section class="reset-all-notifications">
+<ul class='list' role='list'>
+  <li class='comp' data-goto="">
+   <div>
+      <h3>Reset All Notifications</h3>
+   </div>
+  </li>
+  <li class='comp' data-goto="">
+   <div>
+      <p>Reset All Notifications including groups</p>
+   </div>
+  </li>
+</ul>
+</section>
+
+<!-- <section>
+<ul class='list tick select'>
+  <li>
+     <h3>Yes</h3>
+  </li>
+  <li>
+     <h3>No</h3>
+  </li>
+</ul>
+<p><span><strong>Feedback is set to: </strong></span><span id="response"></span></p>
+</section> -->

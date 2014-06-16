@@ -1,0 +1,65 @@
+<script src="/vendor/chui/chocolatechip-3.0.6.js"></script>
+<script src="/vendor/chui/chui-3.0.6.js"></script>
+
+<script>
+  $(function() {
+    $.UIDeletable({
+      list: '.list', 
+      callback: function(item) {
+        var text = $(item).siblings('h3').text();
+        $('#response').html('You deleted: <strong>' + text + '</strong>');
+      }
+    });
+  });
+</script>
+
+<style>
+  #response {
+     color: #007aff !important;
+  }
+</style>
+
+<section class="contacts">
+  <div class="apple-search">
+    <input type='text' id='contactSearch' placeholder='Search'>
+  </div>
+
+<article class="contact-z">
+  <section>
+    <h2>A</h2>
+    <ul class='list harry-contact contact-list james-button'>
+      <li class='nav james-button'>
+      <aside>
+            <span class="default-icon"><img title='' src="/images/harry.png" style="height: 45px;"></span>
+         </aside>
+       <h3>Harry Adams</h3>
+      </li>
+    </ul>
+    <ul class='list james-contact contact-list james-button'>
+      <li class="nav conversation-button james-button" id="james-btn">
+      <aside class="james-button">
+        <span class="default-icon james-button"><img title='' src="/images/james.png" style="height: 45px;"></span>
+      </aside>
+       <h3 class="james-button">James Adams</h3>
+      </li>
+    </ul>
+    <ul class='list max-contact contact-list'>
+      <li class='nav'>
+      <aside>
+            <span class="default-icon"><img title='' src="/images/max@2x.png" style="height: 45px;"></span>
+         </aside>
+        <h3>Max Andrews</h3>
+      </li>
+    </ul>
+    <h2 class="contact-r">R</h2>
+    <ul class='list contact-list list-2'>
+      <li class='nav conversation-button'>
+        <aside>
+            <span class="default-icon"><img title='' src="/images/hannah.png" style="height: 45px;"></span>
+         </aside>
+         <h3>Hannah Richards</h3>
+      </li>
+    </ul>
+  </section>
+</article>
+</section>

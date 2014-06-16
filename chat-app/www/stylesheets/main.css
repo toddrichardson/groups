@@ -1,0 +1,664 @@
+@import url('import.css');
+/*------------------------------------*\
+  COLORS - colour variables
+\*------------------------------------*/
+/*------------------------------------*\*/
+/*------------------------------------*\
+  Appgyver Styles
+\*------------------------------------*/
+* {
+  -webkit-user-select: none;
+  /* Disable selection/copy of elements when tapping for a long time */
+
+  -webkit-touch-callout: none;
+  /* Disable touch callouts */
+
+}
+input,
+textarea,
+[contenteditable] * {
+  -webkit-user-select: auto;
+  /* Allow selection for input elements and those with contenteditable attribute */
+
+}
+/*------------------------------------*\
+
+
+
+/*------------------------------------*\
+  Global Styles
+\*------------------------------------*/
+.content-padded {
+  padding: 10px;
+}
+body h2 {
+  font-size: 12pt;
+  line-height: 12pt;
+  margin: 0;
+  color: #000000;
+  padding: 10px 0;
+  text-align: center;
+}
+.group-visibility {
+  content: '';
+  background-image: url('/images/profile-todd.png');
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.icon {
+  display: none;
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*background-size: auto 90%;*/
+
+  border-radius: 50px;
+}
+.apple-search {
+  z-index: 999;
+  background-color: #d8d8db;
+  padding: 6px;
+}
+.apple-search input {
+  font-size: 14px;
+  height: 25px;
+  width: 96%;
+  text-align: center;
+}
+.status-update-container {
+  margin: 5px 0;
+  background-color: white;
+  height: 45px;
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
+}
+.status-update-container .status-update {
+  margin-top: 4px;
+  width: 65%;
+  padding: 5px 5px 5px 10px;
+  min-height: 25px;
+  font-size: 14px;
+  border-radius: 0;
+  float: left;
+}
+.status-update-container .paperclip-2 {
+  float: left;
+}
+.status-update-container .post-button {
+  margin: 11px 0 0 9px;
+  font-size: 14px;
+  color: #3d9ad1;
+}
+.feed-update .picture-update {
+  position: relative;
+  clear: both;
+}
+.feed-update div {
+  clear: both;
+  width: 100%;
+}
+.feed-update p {
+  font-size: 14px;
+}
+.update-list .width {
+  width: 96% !important;
+  margin-left: 2%;
+}
+.update-list .width .list {
+  border: 1px solid #dfdfdf;
+  margin-bottom: 5px;
+}
+.update-list .comp {
+  margin: 0;
+  padding: 0;
+}
+.update-list .comp div {
+  margin-top: 10px;
+}
+.update-list .comp div h4 {
+  font-size: 10px !important;
+}
+.update-list .comp div p {
+  margin-left: -100px;
+}
+.update-list .profile-image-john {
+  border: 1px solid #dfdfdf;
+}
+/*------------------------------------*\
+
+
+/*------------------------------------*\
+  Profile
+\*------------------------------------*/
+.profile-container {
+  position: relative;
+}
+.profile-container h2 {
+  font-size: 18px;
+}
+.profile-image-john {
+  background-image: url('/images/john-square.jpg');
+  z-index: 3;
+  height: 52px;
+  width: 52px;
+  background-size: 52px 52px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 5px;
+}
+.profile-image-james {
+  background-image: url('/images/james-square.jpg');
+  z-index: 3;
+  height: 52px;
+  width: 52px;
+  background-size: 52px 52px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 5px;
+}
+.default-icon {
+  background-image: url('/images/profile-default.png');
+  height: 50px;
+  width: 50px;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 5px;
+}
+.profile-list li h3 {
+  line-height: 30pt;
+}
+/*------------------------------------*\
+
+/*------------------------------------*\
+  Edit Profile
+\*------------------------------------*/
+fieldset,
+form,
+.form-row .form-text-row {
+  width: 100%;
+  background-color: white;
+  border-left: none;
+  border-right: none;
+}
+/*------------------------------------*\
+  Contacts
+\*------------------------------------*/
+.contact-z {
+  z-index: 1;
+}
+.contact-z h2 {
+  text-align: left;
+}
+.contacts-list .contact-list > li {
+  border-bottom: solid 1px #c8c8c8;
+}
+.contacts-list li.comp > div {
+  border-bottom: none;
+}
+.contacts-list li.comp > aside:last-child {
+  border-bottom: none;
+}
+.contacts-list .contact-list > li h3 {
+  line-height: 14pt;
+}
+.toggle-panels .contacts h2 {
+  display: none;
+  margin-left: 10px;
+}
+.chats-view .list li {
+  margin: 0;
+  padding: 0;
+}
+.chats-view .list li div {
+  margin-top: 10px;
+  width: 100%;
+}
+.chats-view .list li nav {
+  background-color: black;
+  padding: 20px;
+}
+.groups-tab .list li {
+  margin: 0;
+  padding: 0;
+}
+.groups-tab .list li div {
+  margin-top: 10px;
+  width: 100%;
+}
+.groups-tab .list li .nav {
+  margin: 5px 20px 0 0;
+}
+.list > li.show-detail::after {
+  content: '';
+  background-image: url(../icons/contacts@2x.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+}
+li.comp > aside > .show-detail::after {
+  content: '';
+  background-image: url(../icons/contacts@2x.png);
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+}
+/*------------------------------------*\
+
+
+/*------------------------------------*\
+  Chats - Firebase
+\*------------------------------------*/
+.chat-firebase {
+  height: 390px;
+  position: fixed;
+}
+.chat-firebase #toggle-panels {
+  position: relative;
+}
+.chat-firebase .touch {
+  -webkit-overflow-scrolling: touch;
+  height: 390px;
+  position: relative;
+}
+.chat-firebase #myImage {
+  width: 300px;
+  margin: auto;
+  display: block;
+}
+.chat-firebase .messages {
+  padding: 0 10px;
+  overflow-y: scroll;
+  /* has to be scroll, not auto */
+
+  -webkit-overflow-scrolling: touch;
+  height: 340px;
+}
+.chat-firebase .messages p:nth-child(1) {
+  width: 45%;
+  clear: both;
+  border: none;
+}
+.chat-firebase .messages p:nth-child(2) {
+  width: 65%;
+  float: right;
+  clear: both;
+}
+.chat-firebase .messages p:nth-child(3) {
+  width: 80%;
+  clear: both;
+  border: none;
+}
+.chat-firebase .messages p:nth-child(4) {
+  width: 30%;
+  float: right;
+  clear: both;
+}
+.chat-firebase .messages p:nth-child(5) {
+  width: 70%;
+  clear: both;
+  border: none;
+}
+.chat-firebase .messages p:nth-child(6) {
+  width: 25%;
+  float: right;
+  clear: both;
+}
+.chat-firebase .messages p:nth-child(7) {
+  width: 30%;
+  clear: both;
+  border: none;
+}
+.chat-firebase .messages p:nth-child(n+8) {
+  width: auto !important;
+  padding-right: 20px;
+  max-width: 60%;
+  clear: both;
+  border: none;
+}
+.chat-firebase .load-earlier {
+  text-align: center;
+  margin-left: 30%;
+}
+.chat-firebase .chat-name {
+  color: black;
+  display: none;
+}
+.chat-firebase .chat-text {
+  position: relative;
+  background: #8ed2bc;
+  color: #ffffff;
+  padding: 5px;
+  margin: 5px 0;
+  width: 75%;
+  border: 1px solid #dfdfdf;
+  display: block;
+  border-radius: 3px;
+}
+.chat-firebase .chat-text em {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 8px;
+  font-style: normal;
+  opacity: 0.8;
+}
+.chat-firebase .white-right {
+  background: white;
+  color: grey;
+  padding: 5px;
+  margin: 5px 0;
+  display: block;
+  border: 1px solid #dfdfdf;
+}
+.chat-firebase input {
+  position: absolute;
+  width: 60%;
+  padding: 5px 5px 5px 10px;
+  min-height: 25px;
+  border-left: 1px solid #dfdfdf;
+  border-right: 1px solid #dfdfdf;
+  font-size: 14px;
+  border-radius: 0;
+  bottom: 11px;
+}
+.chat-firebase .input-message-container {
+  width: 100%;
+  position: absolute;
+  bottom: -49px;
+  border-top: 1px solid #dfdfdf;
+  background-color: white;
+}
+.chat-firebase .user-message {
+  left: 15%;
+}
+.chat-firebase .send-button {
+  right: 0px;
+  font-size: 14px;
+  position: absolute;
+  color: #3d9ad1;
+}
+.chat-firebase .send-message {
+  position: absolute;
+  width: 15%;
+  right: 0;
+  vertical-align: middle;
+}
+.chat-firebase .microphone {
+  position: absolute;
+  right: 2px;
+}
+/*------------------------------------*/
+/* ==============================
+   Segmented Control
+   ============================== */
+.test-segmented {
+  margin-top: -50px;
+}
+.test-segmented .segmented {
+  display: -webkit-inline-box;
+  -webkit-box-orient: horizontal;
+  display: -webkit-inline-flex;
+  -webkit-flex-direction: row;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.test-segmented .segmented > .button {
+  color: white;
+  opacity: 0.5;
+  margin: 0 15px;
+  border: solid 0px #007aff;
+  padding: 5px 24px;
+  border-left: none;
+  background-color: transparent;
+  width: auto;
+  overflow-x: hidden;
+  -webkit-transition: none;
+  transition: none;
+  font-size: 10pt;
+  /* old flex box */
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /* new flex box */
+
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-flex: 1 !important;
+  -webkit-flex: 1 !important;
+  text-align: center;
+}
+.test-segmented .segmented > .button:hover,
+.test-segmented .segmented > .button.selected {
+  color: #ffffff;
+  background-color: transparent;
+  opacity: 1 !important;
+}
+.test-segmented div.horizontal.centered > .segmented {
+  display: -webkit-box;
+  display: -webkit-flex;
+  margin: 10px 20px;
+  -webkit-flex: 1;
+}
+.test-segmented .segmented.align-flush {
+  position: absolute;
+  right: 12px;
+  top: 6px;
+}
+/* ==============================
+   Lists
+   ============================== */
+/* ==============================
+   Actionsheet
+   ============================== */
+.action-sheet {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* This is just in case you're leaving the markup in the DOM while the sheet
+     isn't activated. I recommend removing the markup instead. */
+
+  pointer-events: none;
+}
+.action-sheet-content a {
+  color: #2087fc !important;
+}
+.action-sheet-content a.delete_friend_button,
+.action-sheet-content a.delete_photo_btn {
+  color: red !important;
+}
+.action-sheet,
+.action-sheet > .action-sheet-content {
+  -webkit-transition: 0.2s ease-in-out;
+  -moz-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+.action-sheet.in {
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+.action-sheet.in > .action-sheet-content {
+  bottom: 0;
+}
+.action-sheet-content {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  max-height: 80%;
+  padding: 0px 15px 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0px auto;
+  margin-bottom: 7px;
+  width: 87%;
+  -webkit-overflow-scrolling: touch;
+  /* background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.95), rgba(231, 240, 245, 0.95)); */
+
+  /* background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(231, 240, 245, 0.95)); */
+
+}
+.action-sheet-content > h3 {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.action-sheet-content > p {
+  font-size: 14px;
+}
+.action-sheet-button {
+  display: block;
+  margin: 0 -15px;
+  line-height: 45px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 7px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.action-sheet-button:last-child {
+  margin-bottom: -15px;
+  font-weight: bold;
+}
+.action-sheet-button:first-child {
+  border-top-right-radius: 4px !important;
+  border-top-left-radius: 4px !important;
+  border-bottom: 1px solid lightgrey;
+}
+.action-sheet-button:nth-last-child(2) {
+  border-bottom-right-radius: 4px !important;
+  border-bottom-left-radius: 4px !important;
+  border-top: 1px solid lightgrey;
+}
+.action-sheet-button-blue {
+  color: white;
+  background: #2087fc;
+}
+.action-sheet-icons {
+  height: 87px;
+  margin: 15px -15px 0;
+  padding: 15px 15px 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  border-top: 1px solid #aab1b5;
+  -webkit-overflow-scrolling: touch;
+}
+.action-sheet-icon {
+  display: inline-block;
+  vertical-align: top;
+  width: 60px;
+  white-space: normal;
+}
+.action-sheet-icon + .action-sheet-icon {
+  margin-left: 15px;
+}
+.action-sheet-icon-link {
+  position: relative;
+  display: block;
+  padding-top: 65px;
+  line-height: 1;
+  font-size: 11px;
+  color: black;
+  text-align: center;
+}
+.action-sheet-icon-link:before,
+.action-sheet-icon-link:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.action-sheet-icon-link:before {
+  line-height: 60px;
+  font-size: 32px;
+  color: #8e969b;
+}
+.action-sheet-icon-link:after {
+  content: '';
+  height: 58px;
+  border: 1px solid #aab1b5;
+  border-radius: 10px;
+}
+/* Friend actionsheet styles*/
+.friend .action-sheet-content {
+  border-radius: 5px;
+}
+.friend .action-sheet-button {
+  display: block;
+  margin: 0 -15px;
+  line-height: 45px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.friend .action-sheet-button:last-child {
+  margin-bottom: -12px;
+  margin-top: 8px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+/*------------------------------------*\
+  Settings
+\*------------------------------------*/
+.reset-all-notifications {
+  text-align: center;
+}
+.clear-logout {
+  color: #3d9ad1;
+}
+.delete-btn {
+  display: none;
+  color: red !important;
+}
+.contact-z li {
+  margin: 0;
+  padding: 5px;
+}
+.contact-z li aside {
+  float: left;
+  width: 20%;
+}
+.contact-z li h3 {
+  margin-left: 0px;
+  margin-top: 10px;
+  float: left;
+  width: 65%;
+}
+.contact-z .list-2 {
+  margin-top: 0px;
+}
+.contact-z li.nav::after {
+  margin-top: 5px;
+}
+.contact-z .max-contact {
+  margin-top: -11px;
+  margin-bottom: -20px;
+}
+.contact-z .james-contact {
+  margin-top: -11px;
+}
+.profile-contact-title {
+  padding-left: 10px;
+  font-size: 12px;
+}
+.profile-r-title {
+  margin-top: 30px;
+}
+.button.align-flush {
+  display: none !important;
+  color: transparent;
+}
